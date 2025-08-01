@@ -20,11 +20,12 @@ public class HomeController : Controller
 
     public IActionResult Privacy()
     {
+        ViewBag.Message = "Security is everybody's business";
+        ViewBag.MyFavoriteColor = "Red";
         return View();
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]    public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
